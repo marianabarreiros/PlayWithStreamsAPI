@@ -37,10 +37,10 @@ public class Teste {
 //        }
 //        System.out.println(string);
         ReadFile rd = new ReadFile();
+        ValidatePatternFile validetaPatternFile = new ValidatePatternFile(rd.getListaDeEntradas());
+        validetaPatternFile.removeSpaces(rd.getListaDeEntradas()).stream().forEach(System.out::println);
 //        System.out.println(rd.verificarArquivoExiste());
-        rd.getListaDeEntradas().stream()
-               .map(s -> s.replace(" ", ""))
-               .forEach(System.out::println);
+        
                 
         }
 }
