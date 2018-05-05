@@ -1,11 +1,9 @@
 package teste;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class ValidatePatternFile {
     private List<String> entryFileValidated;
@@ -43,9 +41,12 @@ public class ValidatePatternFile {
         return entryFileValidated;
     }
     
-    private List<String> removeSpaces(List<String> entryFile) {
+    public List<String> removeSpaces(List<String> entryFile) {
         return entryFile.stream()
                 .map(s -> s.replace(" ", "").trim())
                 .collect(Collectors.toList());
     }
 }
+
+
+
