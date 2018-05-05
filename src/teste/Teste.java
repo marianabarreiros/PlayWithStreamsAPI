@@ -38,9 +38,11 @@ public class Teste {
 //        System.out.println(string);
         ReadFile rd = new ReadFile();
 //        System.out.println(rd.verificarArquivoExiste());
-        rd.getListaDeEntradas().stream()
-               .map(s -> s.replace(" ", ""))
-               .forEach(System.out::println);
+        ValidatePatternFile validate = new ValidatePatternFile(rd.getListaDeEntradas());
+        System.out.println(validate.validatePatternsFile());
+//        rd.getListaDeEntradas().stream()
+//               .map(s -> s.replace(" ", ""))
+//               .forEach(System.out::println);
                 
         }
 }

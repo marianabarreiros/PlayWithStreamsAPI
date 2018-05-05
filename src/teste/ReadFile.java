@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 public class ReadFile {
 
     public boolean verificarArquivoExiste() throws URISyntaxException{
-        final String FILE = "Hotel" + File.separator;
+        final String FILE = "file" + File.separator;
         boolean ret = false;
         try{
             Stream<Path> stream = Files.list(Paths.get(getClass().getClassLoader().getResource(FILE).toURI()));
@@ -38,13 +38,5 @@ public class ReadFile {
         Stream<String> linhas = Files.lines(caminho, StandardCharsets.ISO_8859_1);
         List<String> listaDeLinhas = linhas.collect(Collectors.toList());
         return listaDeLinhas;
-//        List<Jogador> listaDeJogadores = new ArrayList<>();
-//        Jogador jogador;
-//        Iterator it = listaDeLinhas.listIterator();
-//        String str = null;
-//        while (it.hasNext()) {
-//            str = (String) it.next();
-//        }
-//        return null;
     }
 }
