@@ -33,7 +33,7 @@ public class ValidatesDates {
         formatDates = new LinkedHashSet<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMMuuuu");
         AtomicBoolean isValido = new AtomicBoolean(Boolean.TRUE);
-        this.dates = this.ignoreDaysOfWeek(this.toSplitDates(dates));
+        this.dates = ignoreDaysOfWeek(toSplitDates(dates));
         this.dates.forEach(date -> {
             try {
                 LocalDate localDate = LocalDate.parse(date, formatter);

@@ -31,7 +31,7 @@ public class ValidatePatternFile {
     public List<String> validatePatternsFile() {
         Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher;
-        this.removeSpaces(entryFile).forEach(s -> {
+        removeSpaces(entryFile).forEach(s -> {
             if (pattern.matcher(s).matches()) {
                 entryFileValidated.add(s);
             } else{ //Qual a necessidade se não vai para lugar algum? AS LINHAS ERRADAS VEM PRIMEIRO NA SAÍDA
