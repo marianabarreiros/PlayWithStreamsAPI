@@ -1,6 +1,7 @@
 package teste;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -29,36 +30,21 @@ public class ValidateFileLines {
     public Map<String, Set<LocalDate>> parseFileLines(List<String> string) {        
         ValidatesDates fd = ValidatesDates.getInstance();
         String client = null;
-        String dates = null;
+        String[] dates;
         int endIndex = 0;
-//        for (int i = 0; i < stringSplit.length; i++) {
-//            endIndex = stringSplit[i].indexOf(":");
-//            client = stringSplit[i].substring(0, endIndex);
-//            dates = stringSplit[i].substring(endIndex + 1);
-//            final boolean clienteCriado = simpleClientFactory.creatClient(client);
-//            final Set<LocalDate> datasValidas = fd.validatesDates(dates);
-//            if (clienteCriado && datasValidas != null) {
-//                mapClientsEndDates.put(simpleClientFactory.getClient().getTypeClient(), datasValidas);
-//            } else {
-//                System.out.println("Erro ao criar usuário ou a data não é válida, na linha: " + (i + 1));
-//            }
-//        }
-//        return Collections.unmodifiableMap(mapClientsEndDates);
         for(String s : string){
-            endIndex = stringSplit[i].indexOf(":");
-            client = stringSplit[i].substring(0, endIndex);
-            dates = stringSplit[i].substring(endIndex + 1);
+            endIndex = s.indexOf(":");
+            client = s.substring(0, endIndex);
+            dates = s.substring(endIndex + 1).split(",");
+            List<String> datesAsList = Arrays.asList(dates);
             final boolean clienteCriado = simpleClientFactory.creatClient(client);
-            final Set<LocalDate> datasValidas = fd.validatesDates(dates);
+            final Set<LocalDate> datasValidas = fd.validatesDates(datesAsList);  
+            if (clienteCriado && datasValidas != null) {
+                mapClientsEndDates.put(simpleClientFactory.getClient().getTypeClient(), datasValidas);
+            } else {
+                System.out.println("Erro ao criar usuário ou a data não é válida " + s);
+            }
+        }
+        return Collections.unmodifiableMap(mapClientsEndDates);
         }
     }
-//    
-//    private String parseListToString(List<String> dates) {
-//        String text = "";
-//        for (String s : dates) {
-//            text += s;
-//        }
-//        return text;
-//    }
-
-}

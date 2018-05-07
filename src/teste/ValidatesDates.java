@@ -62,8 +62,8 @@ public class ValidatesDates {
     private String parseListToString(List<String> dates){
         String text = "";
         for(String s : dates){
-            text += s;
+            text += s + ",";
         }
-        return text;
+        return text.substring(0, text.length()-1);
     }
 }

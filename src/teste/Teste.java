@@ -39,10 +39,13 @@ public class Teste {
         ReadFile rd = new ReadFile();
 //        System.out.println(rd.verificarArquivoExiste());
         ValidatePatternFile validate = new ValidatePatternFile(rd.getListaDeEntradas());
-        System.out.println(validate.validatePatternsFile());
+//        System.out.println(validate.validatePatternsFile());
         ValidatesDates vd = ValidatesDates.getInstance();
-        List<String> dates = Arrays.asList("26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)");
-        System.out.println(vd.validatesDates(dates));
+        List<String> dates = Arrays.asList("Regular:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)");
+//        System.out.println(vd.validatesDates(dates));
+        
+        ValidateFileLines vfl = ValidateFileLines.getInstance();
+        System.out.println(vfl.parseFileLines(dates));
 //        rd.getListaDeEntradas().stream()
 //               .map(s -> s.replace(" ", ""))
 //               .forEach(System.out::println);
