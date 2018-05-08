@@ -10,6 +10,7 @@ import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -49,7 +50,7 @@ public class Teste {
 //        rd.getListaDeEntradas().stream()
 //               .map(s -> s.replace(" ", ""))
 //               .forEach(System.out::println);
-                
+          
         }
 }
     
