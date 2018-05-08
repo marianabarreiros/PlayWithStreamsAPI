@@ -5,12 +5,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class ValidatePatternFile {
+public class ValidatesFile {
     private List<String> entryFileValidated;
     private final String REGEX = "((([a-zA-Z]+:)?([0-9]{2})([a-zA-Z]{3})([0-9]{4})\\(([a-z]{3,4})\\)[,]?){3,})\\n?"; // https://regexr.com/
     private List<String> entryFile;
 
-    public ValidatePatternFile(List<String> entryFile) {
+    public ValidatesFile(List<String> entryFile) {
         this.entryFile = entryFile;
         entryFileValidated = new ArrayList<>();            
     }
