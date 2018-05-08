@@ -44,7 +44,8 @@ public class Teste {
         ValidatesDates vd = ValidatesDates.getInstance();
         List<String> dates = Arrays.asList("Regular:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)");
 //        System.out.println(vd.validatesDates(dates));
-        
+        PriceTable pt = new PriceTable("Regular", 100, 80);
+        System.out.println(pt.getPriceTable());
 //        ValidateFileLines vfl = ValidateFileLines.getInstance();
 //        System.out.println(vfl.validateLine("Regular:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)"));
 //        rd.getListaDeEntradas().stream()
