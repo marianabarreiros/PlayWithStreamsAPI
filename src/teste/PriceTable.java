@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -32,4 +33,15 @@ public class PriceTable {
         return priceTable.entrySet().stream()
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
+    
+    public String getClient(){
+        String client = null;
+        for(String map : priceTable.keySet()){
+            client = map;
+        }
+        return client;
+    }
+//    pegar a lista
+//    for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+//    List<String> list = entry.getValue();
 }

@@ -4,18 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/Client.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/ValidatesDates.java</file>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/SimpleClientFactory.java</file>
-            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/Prices.java</file>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/Regular.java</file>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/Teste.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/Hotel.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/CreateMapOfClientsEndDates.java</file>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/Rewards.java</file>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/file/HotelReservation.txt</file>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/ValidatesFile.java</file>
-            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/ReadFile.java</file>
-            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/ValidatesDates.java</file>
-            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/Hotel.java</file>
-            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/CreateMapOfClientsEndDates.java</file>
             <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/PriceTable.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/teste/ReadFile.java</file>
         </group>
     </open-files>
 </project-private>
