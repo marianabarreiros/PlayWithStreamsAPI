@@ -4,6 +4,7 @@ import java.util.AbstractMap.SimpleEntry;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -44,6 +45,11 @@ public class PriceTable {
         return client;
     }
 //    pegar a lista
-//    for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-//    List<String> list = entry.getValue();
+    public List<Double> getListOfDates(){
+        List<Double> list = new LinkedList<>();
+        for (List<Double> entry : priceTable.values()) {
+            list = entry;
+        }
+    return list;
+    }
 }

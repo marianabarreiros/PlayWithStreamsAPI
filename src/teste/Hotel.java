@@ -24,19 +24,20 @@ public class Hotel {
     }
     
     private boolean checkIfClientExists(PriceTable table){
-        boolean clientPresent = table.getPriceTable()
+        boolean clientPresent = this.priceTable.getPriceTable()
                 .entrySet()
                 .stream()
                 .filter(p -> p.getKey().equals(table.getClient()))
                 .findAny()
                 .isPresent(); 
         return clientPresent;
+//        this.priceTable.getClient().equals(table.getClient())
     }
-    
+   
     public void addTableDynamically(PriceTable table){
-//        if(checkIfClientExists(table)){
-//            priceTable.getPriceTable().put(name, value);
-//        }else
-//            System.out.println("Esse Cliente já foi adicionado ao hotel"); 
+        if(checkIfClientExists(table)){
+            priceTable.getPriceTable().put(table.getClient(), table.getListOfDates());
+        }else
+            System.out.println("Esse Cliente já foi adicionado ao hotel"); 
     } 
 }

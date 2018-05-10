@@ -49,8 +49,9 @@ public class Teste {
         PriceTable pt2 = new PriceTable("Especial", 100, 80);
         
         Lakewood.addTableDynamically(pt2);
-        System.out.println(pt.getPriceTable());
-        System.out.println(pt2.getPriceTable());
+        Lakewood.addTableDynamically(pt);
+        System.out.println(pt.getListOfDates());
+//        System.out.println(pt2.getPriceTable());
                 
                 
         
