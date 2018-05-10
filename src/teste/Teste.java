@@ -44,8 +44,16 @@ public class Teste {
         ValidatesDates vd = ValidatesDates.getInstance();
         List<String> dates = Arrays.asList("Regular:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)");
 //        System.out.println(vd.validatesDates(dates));
+        Hotel Lakewood = new Hotel("Lakewwod", '2');
         PriceTable pt = new PriceTable("Regular", 100, 80);
+        PriceTable pt2 = new PriceTable("Especial", 100, 80);
+        
+        Lakewood.addTableDynamically(pt2);
         System.out.println(pt.getPriceTable());
+        System.out.println(pt2.getPriceTable());
+                
+                
+        
 //        ValidateFileLines vfl = ValidateFileLines.getInstance();
 //        System.out.println(vfl.validateLine("Regular:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)"));
 //        rd.getListaDeEntradas().stream()

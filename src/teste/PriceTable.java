@@ -27,6 +27,8 @@ public class PriceTable {
         return priceTable = Collections.unmodifiableMap(Stream.of(
                 new SimpleEntry<>(client, values))
                 .collect(Collectors.toMap((e) -> e.getKey(), (e) -> e.getValue())));
+//        priceTable.put(client, values);
+//        return priceTable;
     }
 
     public Map<String, List<Double>> getPriceTable() {

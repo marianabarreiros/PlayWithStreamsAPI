@@ -10,7 +10,7 @@ public class Hotel {
   private String name;
   private PriceTable priceTable;
   
-    public Hotel(char classification, String name) {
+    public Hotel(String name, char classification) {
         this.classification = classification;
         this.name = name;
     }
@@ -38,5 +38,5 @@ public class Hotel {
 //            priceTable.getPriceTable().put(name, value);
 //        }else
 //            System.out.println("Esse Cliente já foi adicionado ao hotel"); 
-//    } 
+    } 
 }
