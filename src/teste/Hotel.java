@@ -1,18 +1,18 @@
 package teste;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Hotel {
   private char classification;
   private String name;
-  private PriceTable priceTable;
-  
-    public Hotel(String name, char classification) {
+  private List<PriceTable> priceTable;
+
+    public Hotel(char classification, String name) {
         this.classification = classification;
         this.name = name;
+        priceTable = new ArrayList<>();
     }
 
     public char getClassification() {
@@ -23,21 +23,17 @@ public class Hotel {
         return name;
     }
     
-    private boolean checkIfClientExists(PriceTable table){
-        boolean clientPresent = this.priceTable.getPriceTable()
-                .entrySet()
-                .stream()
-                .filter(p -> p.getKey().equals(table.getClient()))
+    private boolean thereIsClient(PriceTable table){
+        return priceTable.stream()
+                .filter(p -> p.getClient().equalsIgnoreCase(table.getClient()))
                 .findAny()
-                .isPresent(); 
-        return clientPresent;
-//        this.priceTable.getClient().equals(table.getClient())
+                .isPresent();
     }
-   
-    public void addTableDynamically(PriceTable table){
-        if(checkIfClientExists(table)){
-            priceTable.getPriceTable().put(table.getClient(), table.getListOfDates());
+    
+    public void addPriceTableDynamically(PriceTable table){        
+        if(!thereIsClient(table)){
+            priceTable.add(table);
         }else
             System.out.println("Esse Cliente já foi adicionado ao hotel"); 
-    } 
+    }
 }

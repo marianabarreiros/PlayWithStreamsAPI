@@ -47,10 +47,7 @@ public class Teste {
         Hotel Lakewood = new Hotel("Lakewwod", '2');
         PriceTable pt = new PriceTable("Regular", 100, 80);
         PriceTable pt2 = new PriceTable("Especial", 100, 80);
-        
-        Lakewood.addTableDynamically(pt2);
-        Lakewood.addTableDynamically(pt);
-        System.out.println(pt.getListOfDates());
+
 //        System.out.println(pt2.getPriceTable());
                 
                 
