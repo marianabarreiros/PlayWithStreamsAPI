@@ -44,14 +44,20 @@ public class Teste {
         ValidatesDates vd = ValidatesDates.getInstance();
         List<String> dates = Arrays.asList("Regular:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)");
 //        System.out.println(vd.validatesDates(dates));
-        Hotel Lakewood = new Hotel("Lakewwod", '2');
+        System.out.println();
+        Hotel lakewood = new Hotel("Lakewwod", '2');
         PriceTable pt = new PriceTable("Regular", 100, 80);
         PriceTable pt2 = new PriceTable("Especial", 100, 80);
         PriceTable pt3 = new PriceTable("Especial", 100, 80);
-        Lakewood.addPriceTableDynamically(pt);
-        Lakewood.addPriceTableDynamically(pt2);
-        Lakewood.addPriceTableDynamically(pt3);
+        lakewood.addPriceTableDynamically(pt);
+        lakewood.addPriceTableDynamically(pt2);
+        List<Hotel> hotelList = Arrays.asList(lakewood);
 
+        CreateMapOfClientsEndDates createMapOfClientsEndDates = CreateMapOfClientsEndDates.getInstance();
+        System.out.println(createMapOfClientsEndDates.createMap(validate.validatePatternsFile()));
+        FindCheapestHotel findCheapestHotel = new FindCheapestHotel(createMapOfClientsEndDates.createMap(validate.validatePatternsFile()), hotelList);
+        System.out.println(findCheapestHotel.getClients());
+        System.out.println(findCheapestHotel.getDates());
 //        System.out.println(pt2.getPriceTable());
                 
                 
