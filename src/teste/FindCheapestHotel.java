@@ -9,28 +9,16 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FindCheapestHotel {
-    Map<String, Set<LocalDate>> mapOfClientsEndDates;
-    List<Hotel> hotelList = new ArrayList<>();
-    List<Quotation> quotation = new ArrayList<>();
+    private Map<String, Set<LocalDate>> mapOfClientsEndDates;
+    private List<Hotel> hotelList = new ArrayList<>();
+    private List<Quotation> quotation = new ArrayList<>();
 
     public FindCheapestHotel(Map<String, Set<LocalDate>> mapOfClientsEndDates, List<Hotel> hotelList) {
         this.mapOfClientsEndDates = mapOfClientsEndDates;
         this.hotelList = hotelList;
     }
     
-    private List<String> getClients() {
-        return mapOfClientsEndDates.entrySet().stream()
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
-    }
-    
-    private List<Set<LocalDate>> getDates(){
-        return mapOfClientsEndDates.entrySet().stream()
-                .map(Map.Entry::getValue)
-                .collect(Collectors.toList());
-    }
-   
-    private double getFullValue(Hotel hotel){
+    public double getFullValue(Hotel hotel){
         double full = 0;
         PriceTable price;  
         for(Map.Entry<String, Set<LocalDate>> map : mapOfClientsEndDates.entrySet()){
@@ -54,10 +42,10 @@ public class FindCheapestHotel {
                 .get();
     }
     
-    public String findCheapestHotel(){
-        for(int i=0; i<hotelList.size(); i++){
-            double total = getFullValue(hotelList.get(i));
-            quotation.add(new Quotation(hotelList.get(i), total));
-        }
-    }
+//    public String findCheapestHotel(){
+//        for(int i=0; i<hotelList.size(); i++){
+//            double total = getFullValue(hotelList.get(i));
+//            quotation.add(new Quotation(hotelList.get(i), total));
+//        }
+//    }
 }

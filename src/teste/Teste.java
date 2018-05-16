@@ -56,8 +56,7 @@ public class Teste {
         CreateMapOfClientsEndDates createMapOfClientsEndDates = CreateMapOfClientsEndDates.getInstance();
         System.out.println(createMapOfClientsEndDates.createMap(validate.validatePatternsFile()));
         FindCheapestHotel findCheapestHotel = new FindCheapestHotel(createMapOfClientsEndDates.createMap(validate.validatePatternsFile()), hotelList);
-        System.out.println(findCheapestHotel.getClients());
-        System.out.println(findCheapestHotel.getDates());
+        System.out.println(findCheapestHotel.getFullValue(lakewood));
 //        System.out.println(pt2.getPriceTable());
                 
                 
