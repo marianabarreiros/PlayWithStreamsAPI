@@ -22,6 +22,10 @@ public class Hotel {
     public char getClassification() {
         return classification;
     }
+
+    public List<PriceTable> getPriceTable() {
+        return priceTable;
+    }
     
     private boolean thereIsClient(PriceTable table){
         return priceTable.stream()
