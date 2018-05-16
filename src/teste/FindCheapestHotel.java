@@ -18,7 +18,22 @@ public class FindCheapestHotel {
         this.hotelList = hotelList;
     }
     
-    public double getFullValue(Hotel hotel){
+    public String getClient(){
+        return this.mapOfClientsEndDates.entrySet()
+                .stream()
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .get();
+                
+    }   
+
+    public List<Set<LocalDate>> getDates() {
+        return this.mapOfClientsEndDates.values()
+                .stream()
+                .collect(Collectors.toList());
+    }
+    
+    private double getFullValue(Hotel hotel){
         double full = 0;
         PriceTable price;  
         for(Map.Entry<String, Set<LocalDate>> map : mapOfClientsEndDates.entrySet()){

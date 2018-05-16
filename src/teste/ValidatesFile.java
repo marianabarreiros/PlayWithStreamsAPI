@@ -6,28 +6,15 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ValidatesFile {
-    private List<String> entryFileValidated;
     private final String REGEX = "((([a-zA-Z]+:)?([0-9]{2})([a-zA-Z]{3})([0-9]{4})\\(([a-z]{3,4})\\)[,]?){3,})\\n?"; // https://regexr.com/
+    private List<String> entryFileValidated;
     private List<String> entryFile;
 
     public ValidatesFile(List<String> entryFile) {
         this.entryFile = entryFile;
         entryFileValidated = new ArrayList<>();            
     }
-
-//    public List<String> validatePatternsFile() {
-//        this.removeSpaces(entryFile);
-//        Pattern pattern = Pattern.compile(REGEX);
-//        Matcher matcher;
-//        entryFileValidated = IntStream
-//        		.range(0, entryFile.size()-1)
-//        		.filter(i -> pattern.matcher(entryFile.get(i)).matches())
-//        		.mapToObj(i -> entryFile.get(i))
-//        		.collect(Collectors.toList());
-//                
-//        return entryFileValidated;
-//    }
-    
+ 
     public List<String> validatePatternsFile() {
         Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher;
@@ -41,7 +28,7 @@ public class ValidatesFile {
         return entryFileValidated;
     }
     
-    public List<String> removeSpaces(List<String> entryFile) {
+    private List<String> removeSpaces(List<String> entryFile) {
         return entryFile.stream()
                 .map(s -> s.replace(" ", "").trim())
                 .collect(Collectors.toList());
