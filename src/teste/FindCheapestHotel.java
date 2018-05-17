@@ -18,8 +18,8 @@ public class FindCheapestHotel {
         this.hotelList = hotelList;
     }
     
-    public String getClient(){
-        return this.mapOfClientsEndDates.entrySet()
+    private String getClient(){
+        return mapOfClientsEndDates.entrySet()
                 .stream()
                 .map(Map.Entry::getKey)
                 .findFirst()
@@ -27,28 +27,26 @@ public class FindCheapestHotel {
                 
     }   
 
-    public List<Set<LocalDate>> getDates() {
-        return this.mapOfClientsEndDates.values()
-                .stream()
-                .collect(Collectors.toList());
-    }
+//    private List<Set<LocalDate>> getDates() {
+//        return mapOfClientsEndDates.entrySet()
+//                .stream()
+//                .map(Map.Entry::getValue)
+//                .collect(Collectors.toList());
+//    }
     
-    private double getFullValue(Hotel hotel){
+    public double getFullValue(Hotel hotel){
         double full = 0;
-        PriceTable price;  
-        for(Map.Entry<String, Set<LocalDate>> map : mapOfClientsEndDates.entrySet()){
-            price = getPriceByClient(hotel, map.getKey());
-            for(LocalDate date : map.getValue()){
-                if(date.getDayOfWeek().getValue() == 6 || date.getDayOfWeek().getValue() == 7){
-                    full += price.getWeekendRates();
-                }
-                else{
-                    full += price.getWeekdayPrices();
-                }
+        PriceTable price = getPriceByClient(hotel, getClient());       
+            for(Map.Entry<String, Set<LocalDate>> map : mapOfClientsEndDates.entrySet()){
+                for(LocalDate date : map.getValue()){
+                    if(date.getDayOfWeek().getValue() == 6 || date.getDayOfWeek().getValue() == 7){
+                        full += price.getWeekendRates();
+                    }else{
+                        full += price.getWeekdayPrices();}
             }
         }
-        return full;
-    }
+    return full;
+}
     
     private PriceTable getPriceByClient(Hotel hotel, String cliente) {
         return hotel.getPriceTable().stream()

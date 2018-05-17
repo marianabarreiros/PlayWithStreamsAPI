@@ -33,11 +33,15 @@ public class Teste {
         lakewood.addPriceTableDynamically(pt);
         lakewood.addPriceTableDynamically(pt2);
         
-        List<Hotel> hotelList = Arrays.asList(lakewood);     
+        List<Hotel> hotelList = Arrays.asList(lakewood);   
         
-        for(Map.Entry<String, Set<LocalDate>> mp : map.entrySet()){
-            FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) mp, hotelList);            
-        }
+        FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) map, hotelList);
+        System.out.println(findCheapsHotel.getFullValue(lakewood));
+        
+        
+//        for(Map.Entry<String, Set<LocalDate>> mp : map.entrySet()){
+//            FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) mp, hotelList);            
+//        }
     }
 }
 
