@@ -2,6 +2,7 @@ package teste;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -11,7 +12,7 @@ import java.util.stream.Stream;
 public class FindCheapestHotel {
     private Map<String, Set<LocalDate>> mapOfClientsEndDates;
     private List<Hotel> hotelList = new ArrayList<>();
-    private List<Quotation> quotation = new ArrayList<>();
+    private List<Quotation> quotations = new ArrayList<>();
 
     public FindCheapestHotel(Map<String, Set<LocalDate>> mapOfClientsEndDates, List<Hotel> hotelList) {
         this.mapOfClientsEndDates = mapOfClientsEndDates;
@@ -34,7 +35,7 @@ public class FindCheapestHotel {
 //                .collect(Collectors.toList());
 //    }
     
-    public double getFullValue(Hotel hotel){
+    private double getFullValue(Hotel hotel){
         double full = 0;
         PriceTable price = getPriceByClient(hotel, getClient());       
             for(Map.Entry<String, Set<LocalDate>> map : mapOfClientsEndDates.entrySet()){
@@ -55,10 +56,15 @@ public class FindCheapestHotel {
                 .get();
     }
     
-//    public String findCheapestHotel(){
-//        for(int i=0; i<hotelList.size(); i++){
-//            double total = getFullValue(hotelList.get(i));
-//            quotation.add(new Quotation(hotelList.get(i), total));
-//        }
-//    }
+    public String findCheapestHotel(){
+        for(int i=0; i<hotelList.size(); i++){
+            double total = getFullValue(hotelList.get(i));
+            quotations.add(new Quotation(hotelList.get(i), total));
+        }
+        java.util.Optional<Quotation> quotation = quotations.stream()
+                .sorted(Comparator.comparing(Quotation::getTotal)).min(Quotation::getTotal);
+                        
+        
+        return quotation.get().getHotel().getName();
+    }
 }

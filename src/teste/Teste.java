@@ -35,13 +35,13 @@ public class Teste {
         
         List<Hotel> hotelList = Arrays.asList(lakewood);   
         
-        FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) map, hotelList);
-        System.out.println(findCheapsHotel.getFullValue(lakewood));
+//        FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) map, hotelList);
+//        System.out.println(findCheapsHotel.getFullValue(lakewood));
         
         
-//        for(Map.Entry<String, Set<LocalDate>> mp : map.entrySet()){
-//            FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) mp, hotelList);            
-//        }
+        for(Map.Entry<String, Set<LocalDate>> mp : map.entrySet()){
+            FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) mp, hotelList);            
+        }
     }
 }
 
