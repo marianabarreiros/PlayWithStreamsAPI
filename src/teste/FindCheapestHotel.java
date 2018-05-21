@@ -62,7 +62,7 @@ public class FindCheapestHotel {
             quotations.add(new Quotation(hotelList.get(i), total));
         }
         java.util.Optional<Quotation> quotation = quotations.stream()
-                .sorted(Comparator.comparing(Quotation::getTotal)).min(Quotation::getTotal);
+                .sorted(Comparator.comparing(Quotation::getTotal).reversed());
                         
         
         return quotation.get().getHotel().getName();

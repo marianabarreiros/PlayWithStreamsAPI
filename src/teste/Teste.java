@@ -40,7 +40,8 @@ public class Teste {
         
         
         for(Map.Entry<String, Set<LocalDate>> mp : map.entrySet()){
-            FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) mp, hotelList);            
+            FindCheapestHotel findCheapsHotel = new FindCheapestHotel((Map<String, Set<LocalDate>>) mp, hotelList);  
+            System.out.println();
         }
     }
 }
