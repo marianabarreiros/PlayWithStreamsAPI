@@ -56,15 +56,15 @@ public class FindCheapestHotel {
                 .get();
     }
     
-    public String findCheapestHotel(){
-        for(int i=0; i<hotelList.size(); i++){
-            double total = getFullValue(hotelList.get(i));
-            quotations.add(new Quotation(hotelList.get(i), total));
-        }
-        java.util.Optional<Quotation> quotation = quotations.stream()
-                .sorted(Comparator.comparing(Quotation::getTotal).reversed());
-                        
-        
-        return quotation.get().getHotel().getName();
-    }
+//    public String findCheapestHotel(){
+//        for(int i=0; i<hotelList.size(); i++){
+//            double total = getFullValue(hotelList.get(i));
+//            quotations.add(new Quotation(hotelList.get(i), total));
+//        }
+//        java.util.Optional<Quotation> quotation = quotations.stream()
+//                .sorted(Comparator.comparing(Quotation::getTotal).reversed());
+//                        
+//        
+//        return quotation.get().getHotel().getName();
+//    }
 }

@@ -16,21 +16,21 @@ import java.util.stream.Stream;
 
 public class ReadFile {
 
-    public boolean verificarArquivoExiste() throws URISyntaxException{
-        final String FILE = "file" + File.separator;
-        boolean ret = false;
-        try{
-            Stream<Path> stream = Files.list(Paths.get(getClass().getClassLoader().getResource(FILE).toURI()));
-            Optional<Path> arq = stream.filter(p -> p.toString().endsWith("HotelReservation.txt")).findAny();
-            ret = arq.isPresent(); //informa se o arquivo está presente
-        } catch (NullPointerException ex) {
-            System.out.println("Caminho não encontrado");
-            exit(0);
-        } catch (IOException ex){
-            System.out.println("");
-        }
-        return ret;
-    }
+//    public boolean verificarArquivoExiste() throws URISyntaxException{
+//        final String FILE = "file" + File.separator;
+//        boolean ret = false;
+//        try{
+//            Stream<Path> stream = Files.list(Paths.get(getClass().getClassLoader().getResource(FILE).toURI()));
+//            Optional<Path> arq = stream.filter(p -> p.toString().endsWith("HotelReservation.txt")).findAny();
+//            ret = arq.isPresent(); //informa se o arquivo está presente
+//        } catch (NullPointerException ex) {
+//            System.out.println("Caminho não encontrado");
+//            exit(0);
+//        } catch (IOException ex){
+//            System.out.println("");
+//        }
+//        return ret;
+//    }
 
     public List<String> getListaDeEntradas()throws IOException, URISyntaxException{
         final String FILE = "file" + File.separator + "HotelReservation.txt";
