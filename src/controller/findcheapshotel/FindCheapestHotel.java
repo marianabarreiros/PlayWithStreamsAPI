@@ -39,7 +39,7 @@ public class FindCheapestHotel {
             getQuotations().sort(Comparator.comparingDouble(Quotation::getTotal).reversed().thenComparing(Quotation::getClassificationHotel).reversed());
             return quotations.get(0).getHotel().getName();
         } catch (NullPointerException ex) {
-            System.out.println("Cliente não existe");
+            System.out.println("Cliente não existe ou data inválida");
         }
         return "";
     }

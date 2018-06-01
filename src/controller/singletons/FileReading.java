@@ -27,10 +27,16 @@ public class FileReading {
     }
 
     public Collection<String> getFilledLinesListInFile() throws IOException, URISyntaxException {
-        final String FILE = "file" + File.separator + "HotelReservation.txt";
-        Path filePath = Paths.get(getClass().getClassLoader().getResource(FILE).toURI());
-        Stream<String> filledLines = Files.lines(filePath, StandardCharsets.ISO_8859_1);
-        List<String> filledLinesList = filledLines.collect(Collectors.toList());
-        return filledLinesList;
+        try {
+            final String FILE = "file" + File.separator + "HotelReservation.txt";
+            Path filePath = Paths.get(getClass().getClassLoader().getResource(FILE).toURI());
+            Stream<String> filledLines = Files.lines(filePath, StandardCharsets.ISO_8859_1);
+            List<String> filledLinesList = filledLines.collect(Collectors.toList());
+            return filledLinesList;
+        } catch (NullPointerException e) {
+            System.out.println("Error: Verfique se o nome do arquivo está correto, está na pasta correta e preenchido");
+            System.exit(0);
+        }
+        return null;
     }
 }

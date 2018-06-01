@@ -16,7 +16,7 @@ public class ValidateFileLines {
 
     public ValidateFileLines(Collection<String> listOfFileLines) {
         this.listOfFileLines = listOfFileLines;
-        listOfValidatedFileLines = new ArrayList<>();
+        listOfValidatedFileLines = new ArrayList<>();   
     }
 
     public Collection<String> validateFileLinesAcrossByPattern() {
