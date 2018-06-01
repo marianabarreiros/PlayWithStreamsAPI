@@ -2,7 +2,6 @@ package core;
 
 import com.sun.javafx.collections.UnmodifiableObservableMap;
 import controller.findcheapshotel.FindCheapestHotel;
-import controller.mapofclientsanddates.UnmodifiableMapOfClientsEndDates;
 import controller.singletons.FileReading;
 import controller.validatefile.ValidateFileLines;
 import java.io.IOException;
@@ -19,7 +18,7 @@ import model.pricetable.PriceTable;
 
 public class RunApp {
 
-    public static void main(String[] args) throws IOException, URISyntaxException {
+    public static void main(String[] args) throws IOException, URISyntaxException, Exception {
         List<Hotel> listaHoteis = loadHotels();
         FileReading fileReading = FileReading.getInstance();
         ValidateFileLines validateFileLines = new ValidateFileLines(fileReading.getFilledLinesListInFile());

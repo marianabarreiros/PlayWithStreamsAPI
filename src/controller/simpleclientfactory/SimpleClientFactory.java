@@ -12,7 +12,7 @@ public class SimpleClientFactory {
         return clientType;
     }
 
-    public boolean creatClient(String client){
+    public boolean creatClient(String client) throws Exception{
         switch (client.toLowerCase()) {
             case "regular":
                 this.clientType = new Regular();
@@ -21,7 +21,7 @@ public class SimpleClientFactory {
                 this.clientType = new Rewards();
                 return true;
             default:
-                throw new NullPointerException();
+                return false;
         }
     }
 }

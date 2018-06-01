@@ -7,14 +7,9 @@ public class GetClient {
 
     private SimpleClientFactory simpleClientFactory = new SimpleClientFactory();
 
-    public String returnClient(String fileLine) {
-        try {
-            if(simpleClientFactory.creatClient(getNameClient(fileLine)))
-                return simpleClientFactory.getClientType().getTypeClient();
-        } catch (NullPointerException e) {
-            System.out.println("Erro: Cliente não existe");
-        }
-        return null;
+    public String returnClient(String fileLine) throws Exception {
+        simpleClientFactory.creatClient(getNameClient(fileLine)); 
+        return simpleClientFactory.getClientType().getTypeClient();
     }
 
     private String getNameClient(String fileLine) {

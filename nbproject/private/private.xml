@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/controller/singletons/ValidDates.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/controller/findcheapshotel/FindCheapestHotel.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/model/abstractclient/Client.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/model/concreteclients/Regular.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/controller/validatefile/ValidateFileLines.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/core/RunApp.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/controller/simpleclientfactory/SimpleClientFactory.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/model/concreteclients/Rewards.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/file/HotelReservation.txt</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/controller/returnclient/GetClient.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/controller/singletons/FileReading.java</file>
+            <file>file:/C:/Users/Win-7/Downloads/Bridge/teste/src/controller/returndates/GetDates.java</file>
+        </group>
     </open-files>
 </project-private>

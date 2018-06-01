@@ -10,6 +10,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import model.hotel.Hotel;
@@ -32,12 +34,17 @@ public class FindCheapestHotel {
         getDates = new GetDates();
     }
     
-    public String findCheapestHotel(){
-        getQuotations().sort(Comparator.comparingDouble(Quotation::getTotal).reversed().thenComparing(Quotation::getClassificationHotel).reversed());
-        return quotations.get(0).getHotel().getName();
+    public String findCheapestHotel() throws Exception{
+        try {
+            getQuotations().sort(Comparator.comparingDouble(Quotation::getTotal).reversed().thenComparing(Quotation::getClassificationHotel).reversed());
+            return quotations.get(0).getHotel().getName();
+        } catch (NullPointerException ex) {
+            System.out.println("Cliente não existe");
+        }
+        return "";
     }
 
-    private List<Quotation> getQuotations() {
+    private List<Quotation> getQuotations() throws Exception {
         for (Hotel hotel : hotelList) {
             double total = getFullValueForPeriodRequested(hotel);
             quotations.add(new Quotation(hotel, total));
@@ -45,7 +52,7 @@ public class FindCheapestHotel {
         return quotations;
     }
 
-    private double getFullValueForPeriodRequested(Hotel hotel) {
+    private double getFullValueForPeriodRequested(Hotel hotel) throws Exception{
         double full = 0;
         PriceTable price = getPriceTableByClient(hotel, getClient.returnClient(fileLine));
         for (LocalDate date : getDates.returnDates(fileLine)) {
